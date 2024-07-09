@@ -1,1 +1,1 @@
-find . \( -name '*~' -o -name '#*' -o -name '*#' \) -delete -print
+find . \( -name '*~' -o -name '#*#' \) -delete -print
