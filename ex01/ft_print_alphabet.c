@@ -1,18 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/10 10:48:48 by rzvir             #+#    #+#             */
+/*   Updated: 2024/07/10 11:10:07 by rzvir            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_alphabet(void)
+void	ft_print_alphabet(void)
 {
-    char i;
-
-    for (i = 'a'; i <= 'z'; i++)
-    {
-        write(1, &i, 1);
-    }
+	write(1, "abcdefghijklmnopqrstuvwxyz", 26);
 }
 
-int main(void)
+int	main(void)
 {
-    ft_print_alphabet();
-
-    return 0;
+	ft_print_alphabet();
+	return (0);
 }
