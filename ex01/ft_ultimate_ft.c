@@ -6,7 +6,7 @@
 /*   By: rzvir <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:06:15 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/11 16:53:11 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/11 17:17:01 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ void	ft_ultimate_ft(int *********nbr)
 	*********nbr = 42;
 }
 
-int	main(void)
+/* int	main(void)
 {
-	int n = 0;
+	int n;
+	n = 0;
 	int *pN1 = &n;
 	int **pN2 = &pN1;
 	int ***pN3 = &pN2;
@@ -34,4 +35,4 @@ int	main(void)
 	ft_ultimate_ft(pN9);
 	printf("%d\n", n);
 	return (0);
-}
+} */
