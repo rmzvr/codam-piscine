@@ -1,3 +1,3 @@
 #!/bin/bash
 
-id -nG $FT_USER | sed 's/ /,/g'
+id -nG $FT_USER | sed 's/ /,/g' | sed '$a\'
