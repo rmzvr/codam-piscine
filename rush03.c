@@ -38,6 +38,7 @@ void	rush(int x, int y)
 			ft_print(count_x, count_y, x - 1, y - 1);
 			count_x++;
 		}
+		ft_putchar('\n');
 		count_y++;
 	}
 }
