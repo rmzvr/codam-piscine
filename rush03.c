@@ -6,7 +6,7 @@
 /*   By: rzvir <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:05:09 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/13 13:34:47 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/13 13:37:04 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	rush(int x, int y)
 {
 	int	count_x;
 	int	count_y;
-	int	max_count_x;
-	int	max_count_y;
 
 	count_y = 0;
 	while (count_y < y)
