@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rzvir <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mizzo <mizzo@student.codam.nl>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:05:09 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/13 13:37:04 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/14 19:52:09 by mizzo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putchar(char c);
 
@@ -24,11 +26,16 @@ void	ft_print(int count_x, int count_y, int x, int y)
 		ft_putchar(' ');
 }
 
-void	rush(int x, int y)
+int	rush(int x, int y)
 {
 	int	count_x;
 	int	count_y;
 
+	if (x <= 0 || y <= 0)
+	{
+		write(1, "ERROR, x or y has to be a possitive number!\n", 45);
+		return (1);
+	}
 	count_y = 0;
 	while (count_y < y)
 	{
@@ -41,4 +48,5 @@ void	rush(int x, int y)
 		ft_putchar('\n');
 		count_y++;
 	}
+	return (0);
 }
