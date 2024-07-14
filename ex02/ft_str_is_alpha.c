@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 18:55:35 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/12 19:29:22 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/14 12:04:36 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 'A' || str[i] > 'z' || str[i] > 'Z' && str[i] < 'a')
+		if (str[i] < 'A' || str[i] > 'z' || (str[i] > 'Z' && str[i] < 'a'))
 		{
 			return (0);
 		}
