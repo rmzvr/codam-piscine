@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.rom.c                                    :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 09:59:14 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/16 12:45:38 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/16 12:52:56 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,21 @@ char	*ft_strstr(char *str, char *to_find)
 	return (NULL);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	char	dest[] = "|AABABBBA";
+	char	dest[] = "|AABABB1BA11";
 	char	src[] = "BBA";
 	char	*res;
 
 	res = ft_strstr(dest, src);
-	printf("%s\n", res);
+	if (res == NULL)
+	{
+		printf("ERROR");
+		return (1);
+	}
+	else
+	{
+		printf("%s\n", res);
+	}
 	return (0);
-}
+} */
