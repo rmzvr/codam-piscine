@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmzvr <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 09:59:14 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/15 12:46:17 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/07/16 09:55:32 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ char	*ft_strcat(char *dest, char *src)
 
 /* int	main(void)
 {
-	char	dest[] = "AAA";
-	char	src[] = "BBB";
+	char	dest[] = "AASgA";
+	char	src[] = "BBBSDG";
 	char	*res;
 
 	res = ft_strcat(dest, src);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmzvr <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 09:59:14 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/15 12:51:56 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/07/16 09:57:13 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_strlen(char *str)
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
-	int	dest_len;
+	int				dest_len;
 
 	i = 0;
 	dest_len = ft_strlen(dest);
@@ -42,7 +42,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	return (dest);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	dest[] = "AAA";
 	char	src[] = "BBB";
@@ -51,4 +51,4 @@ int	main(void)
 	res = ft_strncat(dest, src, 2);
 	printf("%s\n", res);
 	return (0);
-}
+} */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.rom.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmzvr <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 09:59:14 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/15 22:44:59 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/07/16 12:45:38 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,17 @@ char	*ft_strstr(char *str, char *to_find)
 	to_find_len = ft_strlen(to_find);
 	while (str[i] != '\0')
 	{
-		if (j == to_find_len - 1)
+		if (str[i] == to_find[j])
 		{
-			return (&str[i - j]);
-		}
-		else if (str[i] == to_find[j])
-		{
+			if (j == to_find_len - 1)
+			{
+				return (&str[i - j]);
+			}
 			j++;
 		}
 		else
 		{
+			i = i - j;
 			j = 0;
 		}
 		i++;

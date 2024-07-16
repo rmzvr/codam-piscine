@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmzvr <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 09:59:14 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/15 17:41:22 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/07/16 09:53:05 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-int	main(int argc, char *argv[])
+/* int	main(void)
 {
 	int	res;
 
-	ft_strcmp(argv[argc - 2], argv[argc - 1]);
+	res = ft_strcmp("ABC", "AB");
 	printf("%d", res);
 	return (0);
-}
+} */
