@@ -6,33 +6,33 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 18:24:02 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/19 18:12:50 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/19 19:03:31 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
+	char	c;
+
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		return;
+		return (0);
 	}
-
 	if (nb < 0)
 	{
 		write(1, "-", 1);
 		nb = -nb;
 	}
-
 	if (nb >= 10)
 		ft_putnbr(nb / 10);
-	char c = (nb % 10) + '0';
+	c = (nb % 10) + '0';
 	write(1, &c, 1);
 }
 
-/* int main(void)
+/* int	main(void)
 {
 	ft_putnbr(-1);
 	return (0);
