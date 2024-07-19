@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 13:50:22 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/19 20:09:38 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/19 20:13:26 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_fibonacci(int index)
 	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
 
-int	main(void)
+/* int	main(void)
 {
 	printf("%d", ft_fibonacci(3));
 	return (0);
-}
+} */

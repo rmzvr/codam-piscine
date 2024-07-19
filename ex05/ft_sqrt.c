@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 13:50:22 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/19 20:10:17 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/19 20:13:29 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	ft_sqrt(int nb)
 	return (0);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	printf("%d", ft_sqrt(1));
 	return (0);
-}
+} */
