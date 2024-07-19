@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmzvr <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 13:50:22 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/18 17:26:15 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/07/19 17:51:09 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	ft_sqrt(int nb)
 	return (0);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	printf("%d", ft_sqrt(621));
+	printf("%d", ft_sqrt(1));
 	return (0);
-}
+} */
