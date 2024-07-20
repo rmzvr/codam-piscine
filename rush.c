@@ -54,7 +54,6 @@ int	is_left(int count, char *row)
 	}
 
 	i++;
-	printf("i: %d c: %d\n", i, count);
 	if (i  == count)
 		return (1);
 	return (0);
@@ -95,21 +94,28 @@ void shift(char *str, int length)
         }	
 }*/
 
-void	extract_left(char *str)
+void	extract_left(char *str, char *temp)
 {
 	int	i;
+	int	j;
 
-	i = 8;
-	while (i <= 12)
-	{
-		str[i-8] = str[i];
+	i = 16;
+	j = 0;
+	while (i <= 22 && str[i] != '\0')
+	{	
+		if (str[i] > '0' && str[i] < '9')
+		{
+			temp[j] = str[i];
+			j++;
+		}
 		i++;	
 	}
+	temp[j] = '\0';
 }
 
 int	main(int argc, char* argv[])
 {
-	char	row1left;
+	char	row1left[5];
 	char	matrix[4][5];
 	int x;
 	int o;
@@ -118,6 +124,7 @@ int	main(int argc, char* argv[])
 	o = 0;
 	x = 0;
 	y = 0;
+	extract_left(argv[argc - 1], row1left);
 	while (x < 4)
 	{
    	        while (y < 4)
@@ -126,12 +133,13 @@ int	main(int argc, char* argv[])
                         y++;
                 }
 		matrix[x][y] = '\0';
-		// row1left = extract_left(argv[argc - 1]);
-		// printf("%s", row1left);
-		while (o != x)
+		//printf("row1left - %c\n", row1left[x]);
+		//printf("martix - %s\n", matrix[x]);
+		//printf("%d\n", is_left((row1left[x] - '0'), matrix[x]));
+		//printf("%s\n", row1left);
+		while (is_left((row1left[x] - '0'), matrix[x]) != 1)
 		{
 			shift(matrix[x], 4);
-			o++;
 		}
 		o = 0;
 		printf("%s\n", matrix[x]);
