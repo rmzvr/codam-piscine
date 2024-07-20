@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 18:24:02 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/19 21:26:53 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/20 20:35:51 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ft_putnbr(int nb)
 	write(1, &c, 1);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	ft_putnbr(0);
 	return (0);
-}
+} */
