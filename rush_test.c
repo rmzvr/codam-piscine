@@ -6,11 +6,10 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 20:00:44 by tchernia          #+#    #+#             */
-/*   Updated: 2024/07/21 19:13:38 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/21 20:23:00 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 
@@ -102,7 +101,7 @@ char **generate_combinations()
 
     i = 0;
     s = 0;
-    combination = (char **)malloc(24 * 8);
+    combination = (char **)malloc(24 * sizeof(char *));
     while (i < 4)
     {
         j = 0;
@@ -198,11 +197,80 @@ int max_seen_right(char *arr)
     return (count);
 }
 
+// Helper function to print each line correctly
+void print_line(char *line)
+{
+    write(1, line, 5); // Write the line to standard output
+}
+
+#include <unistd.h>
+
+#include <unistd.h>
+
+void print_valid_combinations(char combinations[][5], int num_combinations) 
+{
+    char valid[4][4]; // Matrix to store valid combinations
+    int count = 0; // Count of valid combinations
+    char buffer[9]; // Buffer to hold each line of the output (8 characters + 1 newline)
+
+    int i = 0; // Iterator for combinations
+    while (i < num_combinations) 
+    {
+        int j = 0;
+        while (j < count) 
+        {
+            int k = 0;
+            while (k < 4) 
+            {
+                if (combinations[i][k] == valid[j][k]) 
+                {
+                    break;
+                }
+                k++;
+            }
+            if (k == 4) 
+            { // Valid combination
+                j++;
+            } 
+            else 
+            {
+                break;
+            }
+        }
+
+        if (j == count) 
+        { // If the combination is valid
+            for (int l = 0; l < 4; l++) 
+            {
+                valid[count][l] = combinations[i][l];
+            }
+            count++;
+        }
+
+        i++;
+    }
+
+    // Print the valid combinations in matrix form with correct spacing
+    for (i = 0; i < 4; i++) 
+    {
+        // Fill the buffer with numbers and spaces
+        for (int j = 0; j < 4; j++) 
+        {
+            buffer[j * 2] = valid[i][j]; // Number
+            if (j < 3)
+                buffer[j * 2 + 1] = ' ';  // Space
+        }
+        buffer[8] = '\n'; // Newline character
+
+        // Print the line
+        write(1, buffer, 9); // Write the 9-byte buffer including the newline character
+    }
+}
+
 int main(int argc, char *argv[])
 {
     char row1left[5];
     char row1right[5];
-    // char matrix[4][4];
     int x;
     int y;
     int t;
@@ -210,7 +278,7 @@ int main(int argc, char *argv[])
 
     if (is_valid_arg(argv[argc - 1]) != 1 || char_len(argv[argc - 1]) != 31)
     {
-        write(1, "Error\n", 5);
+        write(1, "Error\n", 6);
         return (1);
     }
     x = 0;
@@ -245,40 +313,7 @@ int main(int argc, char *argv[])
         x++;
     }
 
-    int col = 0;
-    while (col < 4)
-    {
-        int row = 0;
-        while (row < 12)
-        {
-            int next_row = row + 1;
-            while (next_row < 12)
-            {
-                if (sol[row][col] == sol[next_row][col])
-                {
-                    printf("Row with duplicate in column %d: ", col);
-                    int print_col = 0;
-                    while (print_col < 4)
-                    {
-                        printf("%c", sol[row][print_col]);
-                        print_col++;
-                    }
-                    printf("\n");
-                    break;
-                }
-                next_row++;
-            }
-            row++;
-        }
-        col++;
-    }
-
-    int i = 0;
-    while (i < y)
-    {
-        // printf("sol[%d] = %s\n", i, sol[i]);
-        i++;
-    }
+    print_valid_combinations(sol, 12);
 
     return (0);
 }
