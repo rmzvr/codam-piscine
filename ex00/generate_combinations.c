@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 21:32:38 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/21 21:58:53 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/21 22:01:25 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	**generate_combinations(void)
 {
-	char	digits[4] = {'1', '2', '3', '4'};
+	char	digits[4];
 	char	**combination;
 	int		i;
 	int		j;
@@ -22,6 +22,10 @@ char	**generate_combinations(void)
 	int		l;
 	int		s;
 
+	digits[0] = '1';
+	digits[1] = '2';
+	digits[2] = '3';
+	digits[3] = '4';
 	i = 0;
 	s = 0;
 	combination = (char **)malloc(24 * sizeof(char *));

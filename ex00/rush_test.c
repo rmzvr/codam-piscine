@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 20:00:44 by tchernia          #+#    #+#             */
-/*   Updated: 2024/07/21 21:55:54 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/21 22:09:12 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	extract_right(char *str, char *temp);
 char	**generate_combinations(void);
 int		max_seen_left(char *arr);
 int		max_seen_right(char *arr);
-void	print_valid_combinations(char combinations[][5], int num_combinations);
+void	check_valid_combinations(char combinations[][5], int num_combinations);
 
 int	main(int argc, char *argv[])
 {
@@ -64,6 +64,6 @@ int	main(int argc, char *argv[])
 		t = 0;
 		x++;
 	}
-	print_valid_combinations(sol, 12);
+	check_valid_combinations(sol, 12);
 	return (0);
 }
