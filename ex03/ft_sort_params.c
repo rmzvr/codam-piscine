@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params2.c                                  :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:05:56 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/23 19:25:45 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/23 21:17:25 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_print(int argc, char *argv[])
 {
 	int	i;
+	int	j;
 
 	i = 1;
 	while (i < argc)
 	{
-		printf("%s\n", argv[i]);
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			write(1, &argv[i][j], 1);
+			j++;
+		}
+		write(1, "\n", 1);
 		i++;
 	}
 }
@@ -51,13 +57,19 @@ void	ft_swap(char *arg1[], char *arg2[])
 void	ft_sort(int argc, char *argv[])
 {
 	int	i;
+	int	j;
 
 	i = 1;
 	while (i < argc - 1)
 	{
-		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+		j = 1;
+		while (j < argc - i - 1)
 		{
-			ft_swap(&argv[i], &argv[i + 1]);
+			if (ft_strcmp(argv[j], argv[j + 1]) > 0)
+			{
+				ft_swap(&argv[j], &argv[j + 1]);
+			}
+			j++;
 		}
 		i++;
 	}
