@@ -1,85 +1,71 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_sort_params2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:05:56 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/23 10:57:57 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/07/23 19:25:45 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-void	swap(char *arg1[], char *arg2[])
-{
-	char	*temp;
-	temp = arg1;
-	arg1 = arg2;
-	arg2 = temp;
-}
-
-
-int     ft_strcmp(char *s1, char *s2)
-{
-        while (*s1 || *s2)
-        {
-                if (*s1 != *s2)
-                {
-                        return (*s1 - *s2);
-                }
-                s1++;
-                s2++;
-        }
-        return (0);
-}
-
-void sort(char	**argv, int argc)
+void	ft_print(int argc, char *argv[])
 {
 	int	i;
-	int	j;
-	int	swapped;
 
 	i = 1;
-	j = 1;
 	while (i < argc)
 	{
-		swapped = 0;
-		while (j < argc - i - 1)
-		{
-			if (ft_strcmp(argv[j], argv[j + 1]) > 0)
-			{
-				swap(argv[j], argv[j + 1]);
-				swapped = 1;
-			}
-			j++;
-		}
-		if (swapped == 0)
-			break;
+		printf("%s\n", argv[i]);
 		i++;
 	}
-
 }
 
-
-int	main(int argc, char **argv)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int		i;
-	int		j;
-
-	sort(argv, argc);
-	i = 1;
-	while (i < argc)
+	while (*s1 || *s2)
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
+		if (*s1 != *s2)
 		{
-			write(1, &argv[i][j], 1);
-			j++;
+			return (*s1 - *s2);
+		}
+		s1++;
+		s2++;
+	}
+	return (0);
+}
+
+void	ft_swap(char *arg1[], char *arg2[])
+{
+	char	*temp;
+
+	temp = *arg1;
+	*arg1 = *arg2;
+	*arg2 = temp;
+}
+
+void	ft_sort(int argc, char *argv[])
+{
+	int	i;
+
+	i = 1;
+	while (i < argc - 1)
+	{
+		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+		{
+			ft_swap(&argv[i], &argv[i + 1]);
 		}
 		i++;
-		write(1, "\n", 1);
 	}
+}
+
+int	main(int argc, char *argv[])
+{
+	ft_sort(argc, argv);
+	ft_print(argc, argv);
 	return (0);
 }
