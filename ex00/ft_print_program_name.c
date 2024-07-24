@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:05:56 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/22 21:11:05 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/24 18:55:34 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int	main(int argc, char **argv)
 	char	*arg;
 	int		i;
 
+	(void) argc;
 	i = 0;
-	arg = argv[argc - 1];
+	arg = argv[0];
 	while (arg[i] != '\0')
 	{
 		write(1, &arg[i], 1);
