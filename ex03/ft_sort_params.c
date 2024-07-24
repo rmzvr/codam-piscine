@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:05:56 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/23 21:17:25 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/24 18:53:34 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_sort(int argc, char *argv[])
 	while (i < argc - 1)
 	{
 		j = 1;
-		while (j < argc - i - 1)
+		while (j <= argc - i - 1)
 		{
 			if (ft_strcmp(argv[j], argv[j + 1]) > 0)
 			{
