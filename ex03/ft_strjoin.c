@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 16:21:05 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/27 12:50:51 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/27 18:10:27 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	char	*res;
 
 	sep_len = ft_strlen(sep);
-	str_len = str_len_calc(strs, sep_len, size);
+	str_len = str_len_calc(strs, sep_len, size) + 1;
 	res = (char *)malloc((str_len) * sizeof(char));
 	fill_res(res, strs, size, sep);
 	return (res);
@@ -97,10 +97,11 @@ int	main(void)
 		"abc4",
 		"abc5"
 	};
-	char	*res = ft_strjoin(5, strs, "12541");
-	while (*res)
+	char	*res = ft_strjoin(5, strs, "-");
+	if (res)
 	{
-		printf("%c", *res++);
+		printf("%s\n", res);
+		free(res);
 	}
 	return (0);
 } */

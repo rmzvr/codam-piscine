@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 13:33:55 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/27 12:50:41 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/27 18:11:30 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strdup(char *src)
 	char	*dest;
 	int		i;
 
-	dest = (char *)malloc(ft_strlen(src) * sizeof(char));
+	dest = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
 	if (dest == NULL)
 		return (NULL);
 	i = 0;
@@ -38,6 +38,7 @@ char	*ft_strdup(char *src)
 		dest[i] = *src++;
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
 
