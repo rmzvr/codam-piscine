@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmzvr <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 16:21:05 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/26 20:07:28 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/07/27 12:50:51 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_strlen(char *str)
@@ -57,7 +56,8 @@ void	fill_res(char *res, char **strs, int size, char *sep)
 		j = 0;
 		while (strs[i][j] != '\0')
 		{
-			*res++ = *strs[i]++;
+			*res++ = strs[i][j];
+			j++;
 		}
 		if (i < size - 1)
 		{
@@ -85,7 +85,9 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (res);
 }
 
-/* int	main(void)
+/* #include <stdio.h>
+
+int	main(void)
 {
 	char	*strs[5] = 
 	{

@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmzvr <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 14:37:01 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/26 20:16:44 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/07/27 12:50:06 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_ultimate_range(int **range, int min, int max)
@@ -27,9 +26,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 	size = max - min;
 	*range = (int *)malloc((size) * sizeof(int));
 	if (*range == NULL)
-	{
 		return (-1);
-	}
 	while (i < size)
 	{
 		(*range)[i] = min++;
@@ -38,7 +35,9 @@ int	ft_ultimate_range(int **range, int min, int max)
 	return (size);
 }
 
-/*int	main(void)
+/* #include <stdio.h>
+
+int	main(void)
 {
 	int	*range;
 	printf("%d\n", ft_ultimate_range(&range, 230, 100));

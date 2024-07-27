@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmzvr <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 13:33:55 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/25 14:05:47 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/07/27 12:50:41 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> 
 #include <stdlib.h>
 
 int	ft_strlen(char *str)
@@ -31,6 +30,8 @@ char	*ft_strdup(char *src)
 	int		i;
 
 	dest = (char *)malloc(ft_strlen(src) * sizeof(char));
+	if (dest == NULL)
+		return (NULL);
 	i = 0;
 	while (*src)
 	{
@@ -40,7 +41,9 @@ char	*ft_strdup(char *src)
 	return (dest);
 }
 
-/* int	main(void)
+/* #include <stdio.h>
+
+int	main(void)
 {
 	char	*res;
 
