@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   process_one_digit.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 13:08:32 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 13:13:21 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
-#include <stdio.h>
+#include "values.h"
+#include "program.h"
 
-void	ft_strremove(char *str, int count)
+int	process_one_digit(char *str, char *f_str, t_dict_e *dict)
 {
-	int	i;
-	int	strlen;
-
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
+	if (str[0] != '0')
 	{
-		str[i - count] = str[i];
-		i++;
+		if (!write_one_str(str, 0, f_str, dict))
+			return (0);
 	}
-	str[i - count] = '\0';
+	return (1);
 }

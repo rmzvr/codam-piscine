@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 14:53:07 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 14:55:00 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
-#include <stdio.h>
-
-void	ft_strremove(char *str, int count)
+int	ft_str_is_numeric(char *str)
 {
 	int	i;
-	int	strlen;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
+	i = 0;
+	while (str[i])
 	{
-		str[i - count] = str[i];
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
 		i++;
 	}
-	str[i - count] = '\0';
+	return (1);
 }

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   trim_dict.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 12:25:47 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 12:41:22 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
-#include <stdio.h>
+#include "values.h"
 
-void	ft_strremove(char *str, int count)
+void	trim_dict(t_dict_e *dict)
 {
 	int	i;
-	int	strlen;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
+	i = 0;
+	while (i < MAX_DICT_ROWS)
 	{
-		str[i - count] = str[i];
+		ft_strtrim_front(dict[i].number, '\n');
+		ft_strtrim_back(dict[i].number, ' ');
+		ft_strtrim_front(dict[i].word, ' ');
+		ft_strtrim_back(dict[i].word, ' ');
 		i++;
 	}
-	str[i - count] = '\0';
 }

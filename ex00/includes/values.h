@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   values.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 11:14:31 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 12:38:12 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
-#include <stdio.h>
+#ifndef VALUES_H
+# define VALUES_H
 
-void	ft_strremove(char *str, int count)
+# include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdio.h>
+
+typedef struct t_dict_e
 {
-	int	i;
-	int	strlen;
+	char	number[100];
+	char	word[100];
+}	t_dict_e;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
-	{
-		str[i - count] = str[i];
-		i++;
-	}
-	str[i - count] = '\0';
-}
+# define DATA_PATH "./data/"
+# define DEFAUlT_DATA_FILE "numbers.dict"
+# define MAX_DICT_SIZE 8192
+# define MAX_DICT_ROWS 200
+# define MAX_OUTPUT_SIZE 8192
+
+#endif

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   parse_buffer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 13:21:05 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 13:21:13 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
-#include <stdio.h>
+#include "values.h"
+#include "program.h"
 
-void	ft_strremove(char *str, int count)
+void	parse_buffer(char *buffer, t_dict_e *dict)
 {
 	int	i;
-	int	strlen;
+	int	row;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
+	i = 0;
+	row = 0;
+	while (buffer[i] && row < MAX_DICT_ROWS)
 	{
-		str[i - count] = str[i];
-		i++;
+		parse_line(buffer, &i, dict, row);
+		row++;
+		if (buffer[i] == '\n')
+			i++;
 	}
-	str[i - count] = '\0';
 }

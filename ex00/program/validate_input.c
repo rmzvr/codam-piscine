@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   validate_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 14:49:27 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 14:54:30 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
-#include <stdio.h>
 
-void	ft_strremove(char *str, int count)
+int	validate_input(int argc, char **argv)
 {
-	int	i;
-	int	strlen;
-
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
-	{
-		str[i - count] = str[i];
-		i++;
-	}
-	str[i - count] = '\0';
+	if (argc < 2 || argc > 3)
+		return (0);
+	if (!ft_str_is_numeric(argv[argc - 1]))
+		return (0);
+	return (1);
 }

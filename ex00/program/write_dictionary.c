@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   write_dictionary.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 12:21:21 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 12:42:02 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "values.h"
 #include "lib.h"
-#include <stdio.h>
 
-void	ft_strremove(char *str, int count)
+int	write_dictionary(char *nbr, char *c_str, t_dict_e *dict)
 {
 	int	i;
-	int	strlen;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
+	i = 0;
+	while (i < MAX_DICT_ROWS)
 	{
-		str[i - count] = str[i];
+		if (ft_strcmp(dict[i].number, nbr) == 0)
+		{
+			ft_strcat(c_str, dict[i].word);
+			ft_strcat(c_str, " ");
+			return (1);
+		}
 		i++;
 	}
-	str[i - count] = '\0';
+	return (0);
 }

@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   read_file_to_buffer.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 13:20:37 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 13:20:44 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
-#include <stdio.h>
+#include "values.h"
 
-void	ft_strremove(char *str, int count)
+long	read_file_to_buffer(char *file, char *buffer)
 {
-	int	i;
-	int	strlen;
+	int		fd;
+	long	bytes_read;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
-	{
-		str[i - count] = str[i];
-		i++;
-	}
-	str[i - count] = '\0';
+	fd = open(file, O_RDONLY);
+	bytes_read = read(fd, buffer, MAX_DICT_SIZE);
+	buffer[bytes_read] = '\0';
+	close(fd);
+	return (bytes_read);
 }

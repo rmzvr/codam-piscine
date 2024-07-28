@@ -6,7 +6,7 @@
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 11:34:24 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/27 17:13:52 by fgroenew         ###   ########.fr       */
+/*   Updated: 2024/07/28 14:54:23 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,9 @@ void	ft_strtrim_back(char *str, char to_trim);
 int		ft_strcmp(char *s1, char *s2);
 void	ft_strremove(char *str, int count);
 char	*ft_strcat(char *dest, char *src);
+char	*ft_strcpy(char *dest, char *src);
+void	ft_putstr(char *str, int with_newline);
+int		ft_show_error(void);
+int		ft_str_is_numeric(char *str);
 
 #endif

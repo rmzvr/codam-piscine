@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 14:43:37 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 14:45:06 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
-#include <stdio.h>
+#include "values.h"
 
-void	ft_strremove(char *str, int count)
+void	ft_putstr(char *str, int with_newline)
 {
 	int	i;
-	int	strlen;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
-	{
-		str[i - count] = str[i];
-		i++;
-	}
-	str[i - count] = '\0';
+	i = 0;
+	while (str[i])
+		write(1, &str[i++], 1);
+	if (with_newline)
+		write(1, "\n", 1);
 }

@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 11:27:16 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 11:27:17 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
-#include <stdio.h>
-
-void	ft_strremove(char *str, int count)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
-	int	strlen;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
+	i = 0;
+	while (src[i])
 	{
-		str[i - count] = str[i];
+		dest[i] = src[i];
 		i++;
 	}
-	str[i - count] = '\0';
+	dest[i] = '\0';
+	return (dest);
 }

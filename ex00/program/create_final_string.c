@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   create_final_string.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 12:19:49 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 12:47:01 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
-#include <stdio.h>
+#include "program.h"
 
-void	ft_strremove(char *str, int count)
+char	*create_final_string(void)
 {
-	int	i;
-	int	strlen;
+	char	*final_string;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
-	{
-		str[i - count] = str[i];
-		i++;
-	}
-	str[i - count] = '\0';
+	final_string = (char *)malloc(MAX_OUTPUT_SIZE * sizeof(char));
+	final_string[0] = '\0';
+	return (final_string);
 }

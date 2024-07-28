@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   parse_line.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 13:20:07 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 13:20:17 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
-#include <stdio.h>
+#include "values.h"
 
-void	ft_strremove(char *str, int count)
+void	parse_line(char *buffer, int *i, t_dict_e *dict, int row)
 {
-	int	i;
-	int	strlen;
+	int	j;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
+	j = 0;
+	while (buffer[*i] != ':')
 	{
-		str[i - count] = str[i];
-		i++;
+		dict[row].number[j] = buffer[*i];
+		j++;
+		(*i)++;
 	}
-	str[i - count] = '\0';
+	dict[row].number[j] = '\0';
+	(*i)++;
+	j = 0;
+	while (buffer[*i] != '\n' && buffer[*i] != '\0')
+	{
+		dict[row].word[j] = buffer[*i];
+		j++;
+		(*i)++;
+	}
+	dict[row].word[j] = '\0';
 }

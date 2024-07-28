@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strremove.c                                     :+:      :+:    :+:   */
+/*   write_hundred_str.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 14:25:42 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 12:35:55 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 12:31:15 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 12:42:32 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
-#include <stdio.h>
+#include "values.h"
+#include "program.h"
 
-void	ft_strremove(char *str, int count)
+int	write_hundred_str(char *str, char *f_str, t_dict_e *dict)
 {
-	int	i;
-	int	strlen;
+	char	*temp_str;
 
-	strlen = ft_strlen(str);
-	i = count;
-	while (i <= strlen)
-	{
-		str[i - count] = str[i];
-		i++;
-	}
-	str[i - count] = '\0';
+	temp_str = (char *)malloc(2 * sizeof(char));
+	temp_str[0] = str[0];
+	temp_str[1] = '\0';
+	if (!write_dictionary(temp_str, f_str, dict))
+		return (0);
+	free(temp_str);
+	if (!write_dictionary("100", f_str, dict))
+		return (0);
+	return (1);
 }
