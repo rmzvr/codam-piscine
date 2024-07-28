@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   process_one_digit.c                                :+:      :+:    :+:   */
+/*   ft_is_only_zero.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 13:08:32 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 15:24:52 by fgroenew         ###   ########.fr       */
+/*   Created: 2024/07/28 15:30:27 by fgroenew          #+#    #+#             */
+/*   Updated: 2024/07/28 15:31:07 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "values.h"
-#include "program.h"
-
-int	process_one_digit(char *str, char *f_str, t_dict_e *dict)
+int	ft_is_only_zero(char *str)
 {
-	if (str[0] != '0' || str[1] == '\0')
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		if (!write_one_str(str, 0, f_str, dict))
+		if (str[i] != '0')
 			return (0);
+		i++;
 	}
 	return (1);
 }

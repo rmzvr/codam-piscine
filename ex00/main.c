@@ -6,7 +6,7 @@
 /*   By: fgroenew <fgroenew@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 11:34:56 by fgroenew          #+#    #+#             */
-/*   Updated: 2024/07/28 14:50:33 by fgroenew         ###   ########.fr       */
+/*   Updated: 2024/07/28 15:35:08 by fgroenew         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ int	main(int argc, char **argv)
 		return (ft_show_error());
 	dictionary = create_dict(argc, argv);
 	final_string = create_final_string();
+	if (!ft_is_only_zero(argv[argc - 1]))
+		ft_strtrim_front(argv[argc - 1], '0');
+	else
+		ft_strcpy(argv[argc - 1], "0");
 	success = write_number(argv[argc - 1], final_string, dictionary);
 	if (success)
 	{
