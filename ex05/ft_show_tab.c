@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 14:10:36 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/28 14:33:01 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/28 14:35:23 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ void	ft_putstr(char *str)
 	}
 }
 
-void    ft_show_tab(struct s_stock_str *par)
+void	ft_show_tab(struct s_stock_str *par)
 {
-    while (par->str != 0)
+	while (par->str != 0)
 	{
-        ft_putnbr(par->size);
-        write(1, "\n", 1);
-        ft_putstr(par->str);
-        write(1, "\n", 1);
-        ft_putstr(par->copy);
-        write(1, "\n", 1);
+		ft_putnbr(par->size);
+		write(1, "\n", 1);
+		ft_putstr(par->str);
+		write(1, "\n", 1);
+		ft_putstr(par->copy);
+		write(1, "\n", 1);
 		par++;
 	}
 }
@@ -64,7 +64,7 @@ void    ft_show_tab(struct s_stock_str *par)
 
 	i = 0;
 	par = ft_strs_to_tab(argc, argv);
-    ft_show_tab(par);
+	ft_show_tab(par);
 	while (i < argc)
 	{
 		free(par[i].copy);
