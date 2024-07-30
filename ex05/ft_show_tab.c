@@ -6,12 +6,13 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 14:10:36 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/29 17:59:37 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/30 13:19:26 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
+#include "ft_stock_str.h"
 
 void	ft_putnbr(int nb)
 {
