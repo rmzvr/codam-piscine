@@ -6,11 +6,12 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 11:22:20 by rzvir             #+#    #+#             */
-/*   Updated: 2024/07/28 14:09:38 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/07/30 13:18:54 by rzvir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "ft_stock_str.h"
 
 int	ft_strlen(char *str)
 {
