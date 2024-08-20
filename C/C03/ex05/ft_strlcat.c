@@ -40,8 +40,8 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	int	i;
 	int	limit;
-	int				dest_len;
-	int				src_len;
+	int	dest_len;
+	int	src_len;
 
 	i = 0;
 	dest_len = ft_strlen(dest);
