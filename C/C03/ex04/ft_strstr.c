@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 09:59:14 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/07/16 12:52:56 by rzvir            ###   ########.fr       */
+/*   Updated: 2024/08/20 14:45:09 by rmzvr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (*str)
-	{
+	while (str[i])
 		i++;
-		str++;
-	}
 	return (i);
 }
 
@@ -34,6 +31,8 @@ char	*ft_strstr(char *str, char *to_find)
 	i = 0;
 	j = 0;
 	to_find_len = ft_strlen(to_find);
+	if (to_find_len == 0)
+		return (str);
 	while (str[i] != '\0')
 	{
 		if (str[i] == to_find[j])
