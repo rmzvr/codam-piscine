@@ -6,7 +6,7 @@
 /*   By: rmzvr <rmzvr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 13:50:22 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/08/23 15:07:55 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/08/24 10:43:03 by rmzvr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,6 @@ int	ft_find_next_prime(int nb)
 
 /* int	main(void)
 {
-	printf("%d", ft_is_prime(81));
+	printf("%d", ft_find_next_prime(10));
 	return (0);
 } */
