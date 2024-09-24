@@ -6,7 +6,7 @@
 /*   By: rmzvr <rmzvr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 11:53:41 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/08/31 21:08:54 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/09/20 17:09:03 by rmzvr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	**ft_split(char *str, char *charset)
 	return (start_res);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	*str;
 	char	*charset;
@@ -113,4 +113,4 @@ int	main(void)
 		res++;
 	}
 	return (0);
-}
+} */
