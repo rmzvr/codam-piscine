@@ -6,7 +6,7 @@
 /*   By: rmzvr <rmzvr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:33:03 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/09/20 16:27:43 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/09/24 14:23:18 by rmzvr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_display_file(char *file_name)
 	char	buffer[1];
 	char	read_bytes;
 	int		file_descriptor;
-	
+
 	file_descriptor = open(file_name, 0);
 	read_bytes = read(file_descriptor, buffer, sizeof(buffer));
 	while (read_bytes > 0)
@@ -71,8 +71,9 @@ int	ft_display_file(char *file_name)
 
 int	main(int argc, char **argv)
 {
-	char	*file_name = argv[1];
+	char	*file_name;
 
+	file_name = argv[1];
 	if (ft_is_argument_invalid(argc))
 	{
 		ft_handle_invalid_argument(argc);
