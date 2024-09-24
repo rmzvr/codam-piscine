@@ -6,7 +6,7 @@
 /*   By: rzvir <rzvir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 09:59:14 by rmzvr             #+#    #+#             */
-/*   Updated: 2024/08/20 14:45:09 by rmzvr            ###   ########.fr       */
+/*   Updated: 2024/09/24 14:25:04 by rmzvr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ char	*ft_strstr(char *str, char *to_find)
 		if (str[i] == to_find[j])
 		{
 			if (j == to_find_len - 1)
-			{
 				return (&str[i - j]);
-			}
 			j++;
 		}
 		else
